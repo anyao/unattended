@@ -1,0 +1,16 @@
+<ion-view title="仓库选择">
+  <ion-nav-buttons side="left">
+    <a class="button button-icon icon ion-person-stalker" ng-click="toorgchoose()"></a>
+  </ion-nav-buttons>
+  <ion-content scroll="false">
+    <ion-content>
+        <ion-list>
+          <ul class="list">
+            <li class="item" ng-repeat="item in whseitems" ng-click="whseselected(item.whseid, item.whsename, item.pk_corp)">
+            {{item.whsename}}
+            </li>
+          </ul>
+        </ion-list>
+    </ion-content>
+  </ion-content>
+</ion-view>

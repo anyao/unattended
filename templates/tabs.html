@@ -1,0 +1,60 @@
+<!-- 
+  Create tabs with an icon and label, using the tabs-positive style. 
+  Each tab's child <ion-nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+<!-- hide-on-keyboard-open -->
+<!--ion-tabs class="tabs-positive tabs-icon-top">
+  <ion-tab title="质检录入" icon="icon ion-compose" href="#/tab/zjlr" ng-if='ifQual'>
+    <ion-nav-view name="tab-zjlr"></ion-nav-view>
+  </ion-tab>
+  
+  <ion-tab title="质检历史" icon="icon ion-clipboard" href="#/tab/zjhis" ng-if='ifQualHis'>
+    <ion-nav-view name="tab-zjhis"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="收货确认" icon="icon ion-checkmark-round" href="#/tab/shqr" ng-if='ifSpot'>
+    <ion-nav-view name="tab-shqr"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="收货历史" icon="icon ion-clock" href="#/tab/shqrhis" ng-if='ifSpotHis'>
+    <ion-nav-view name="tab-shqrhis"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="基本信息" icon="icon ion-person" href="#/tab/infos" ng-if="true">
+    <ion-nav-view name="tab-infos"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs-->
+
+
+<ion-tabs class="tabs-positive tabs-icon-top">
+  <ion-tab title="质检录入" icon="icon ion-compose" ng-Click="tabClick(1)" ng-if='ifQual'>
+    <ion-nav-view name="tab-zjlr"></ion-nav-view>
+  </ion-tab>
+  
+  <ion-tab title="质检历史" icon="icon ion-clipboard" ng-Click="tabClick(2)" ng-if='ifQualHis'>
+    <ion-nav-view name="tab-zjhis"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="质检取样" icon="icon ion-erlenmeyer-flask" ng-Click="tabClick(3)" ng-if='ifQualSmp'>
+    <ion-nav-view name="tab-zjqy"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="收货确认" icon="icon ion-android-checkmark-circle" ng-Click="tabClick(4)" ng-if='ifSpot'>
+    <ion-nav-view name="tab-shqr"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="收货历史" icon="icon ion-clock" ng-Click="tabClick(5)" ng-if='ifSpotHis'>
+    <ion-nav-view name="tab-shqrhis"></ion-nav-view>
+  </ion-tab>
+  
+  <ion-tab title="卡片回收" icon="icon ion-card" ng-Click="tabClick(6)" ng-if='ifRecyc'>
+    <ion-nav-view name="tab-kphs"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="基本信息" icon="icon ion-person" ng-Click="tabClick(7)" ng-if="true">
+    <ion-nav-view name="tab-infos"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

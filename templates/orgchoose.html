@@ -1,0 +1,16 @@
+<ion-view title="仓库组织">
+  <ion-nav-buttons side="left" ng-if="hasorgid">
+    <a class="button button-icon icon ion-close" ng-click="toback()"></a>
+  </ion-nav-buttons>
+  <ion-content scroll="false">
+    <ion-content>
+        <ion-list>
+          <ul class="list">
+            <li class="item" ng-repeat="item in orgitems" ng-click="orgselected(item.orgid)">
+            {{item.orgname}}
+            </li>
+          </ul>
+        </ion-list>
+    </ion-content>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<style type="text/css">
+.row .col {
+    padding: 0px;
+    margin: 0px;
+}
+
+.card{
+  margin:10px;
+}
+</style>
+<ion-view title="{{whsename}}">
+    <ion-nav-buttons side="left">
+        <a class="button button-icon icon ion-home" ng-click="towhsechoose()"></a>
+    </ion-nav-buttons>
+    <ion-content>
+      <ion-refresher pulling-text=" 下拉刷新" refreshing-text=" 正在刷新 ..." on-refresh="refresh()">
+      </ion-refresher>
+      <ion-list>
+        <div class="list card" ng-repeat="item in hisitems">
+          <div class="item">
+            <div class="row">
+              <p class="col"><b>磅单号：{{item.reptno}}</b></p>
+            </div>
+            <div class="row">
+              <p class="col">车牌号：{{item.hphm}}</p>
+              <p class="col">卡号：{{item.cardno}}</p>
+            </div>
+            <div class="row">
+              <p class="col">供应商：{{item.vendername}}</p>
+            </div>
+          </div>
+        </div>
+      </ion-list>
+      <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false" distance="10%" ng-if="ifMore"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

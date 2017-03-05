@@ -1,0 +1,13 @@
+<ion-view title="仓库组织">
+  <ion-content scroll="false">
+    <ion-content>
+        <ion-list>
+          <ul class="list">
+            <li class="item" ng-repeat="item in orgitems" ng-click="orgselected(item.orgid)">
+            {{item.orgname}}
+            </li>
+          </ul>
+        </ion-list>
+    </ion-content>
+  </ion-content>
+</ion-view>

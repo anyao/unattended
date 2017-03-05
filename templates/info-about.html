@@ -1,0 +1,24 @@
+<ion-view title="设备信息">
+  <ion-content has-header="true" padding="true">
+    <div class="list">
+        <div class="row">
+            <div class="col" style="width:150px;"><b>终端型号：</b>{{model}}</div>
+        </div>
+        <div class="row">
+            <div class="col" style="width:150px;"><b>使用地点：</b>{{addr}}</div>
+        </div>
+        <div class="row">
+            <div class="col" style="width:150px;"><b>&nbsp;&nbsp;责任人：</b>{{zrr}}</div>
+        </div>
+        <div class="row">
+            <div class="col" style="width:150px;"><b>系统版本：</b>{{ver}}&nbsp;&nbsp;<span ng-show="hasnewver == false" style="color:blue;font-weight:bold;">(已最新)</span><a ng-show="hasnewver == true" href="{{serverroot}}hrclient_android.apk" target="blank" style="color:red;font-weight:bold;">下载更新</a></div>
+        </div>
+        <div class="row">
+            <div class="col" style="width:150px;"><b>平台版本：</b>{{androidver}}</div>
+        </div>
+        <div class="row">
+            <div class="col" style="width:150px;"><b>发布日期：</b>{{publishat}}</div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,41 @@
+<style type="text/css">
+.row .col {
+    padding: 0px;
+    margin: 0px;
+}
+
+.card{
+  margin:10px;
+}
+</style>
+<ion-view title="质检取样">
+    <ion-content>
+      <ion-refresher pulling-text=" 下拉刷新" refreshing-text=" 正在刷新 ..." on-refresh="refresh()">
+      </ion-refresher>
+      <ion-list>
+        <div class="list card" ng-repeat="item in zjsmpitems" ng-click="toOrder(item)">
+          <div class="item">
+            <div class="row">
+              <p class="col"><b>订单号：{{item.vbillcode}}</b></p>
+            </div>
+            <div class="row">
+              <p class="col">供应商：{{item.vendername}}</p>
+            </div>
+            <div class="row">
+              <p class="col">仓库：{{item.revwhsename}}</p>
+            </div>
+            <div class="row">
+              <p class="col">存货：{{item.invname}}</p>
+              <p class="col">车数：{{item.vehscount}}</p>
+            </div>
+            <div class="row">
+              <p class="col">供应商：{{item.vendername}}</p>
+            </div>
+            <div class="row">
+              <p class="col">备注：{{item.memo}}</p>
+            </div>
+          </div>
+        </div>
+      </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-view title="登录" hide-back-button="true">
+  <ion-content has-header="true" has-tabs="true" padding="true">
+    <div ng-show="hasnewver == true" style="padding-bottom:10px;">
+      服务器上有新版本可以更新，可以去网站下载新版本
+    </div>
+      <form name="frmLogin">
+        <div class="list">
+          <label class="item item-input">
+            <i class="icon ion-person placeholder-icon"></i>
+            <input type="text" name="empcode" placeholder="用户名" ng-model="loginData.empcode" />
+          </label>
+          <label class="item item-input">
+            <i class="icon ion-locked placeholder-icon"></i>
+            <input type="password" placeholder="输入密码" ng-model="loginData.password" />
+          </label>
+          <ion-toggle ng-model="loginData.isNetConnect" ng-checked="loginData.isNetConnect" ng-change="queryInfo()">通过内网连接</ion-toggle>
+          <div ng-show="allowlogin == true">
+            <button class="button button-block button-positive" ng-click="tryLogin()">进入系统</button>
+          </div>
+          <div ng-show="allowreg == true">
+            <button class="button button-block button-positive" ng-click="toRegister()">绑定手机</button>
+          </div>
+        </div>
+      </form>
+    <pre>
+使用说明：
+    1. 本设备仅用于场地质检/收货/发货，不允许外借，或作它用
+    2. 如果连接网络异常可以试着切换内外网连接方式
+    </pre>
+  </ion-content>
+</ion-view>

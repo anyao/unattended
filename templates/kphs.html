@@ -1,0 +1,51 @@
+<style type="text/css">
+  .label-wrapper{
+    padding:9px 10px
+  }
+</style>
+<ion-view title="卡片回收">
+  <ion-content has-header="true" style="padding-top:0px;" scroll="true">
+    <label class="item item-input-inset" style="border:none;padding:0px" ng-if="rept.errmsg">
+      <span class="input-label" style="color:red;font-size:16px;padding:10px">{{rept.errmsg}}</span>
+    </label>
+    <label class="item item-input-inset" style="border:none;padding:0px" ng-if="rept.succmsg">
+      <span class="input-label" style="color:green;font-size:16px;padding:10px">{{rept.succmsg}}</span>
+    </label>
+    <form ng-submit="presubmit()">
+    <div class="list">
+      <label class="item item-input-inset">
+        <span class="input-label" >卡号：{{rept.cardno}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >磅单号：{{rept.reptno}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >车牌号：{{rept.hphm}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >存货：{{rept.invname}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >司机：{{rept.driver}}</span>
+      </label>
+    </div>
+    <div class="card" ng-if="rept.data">
+      <div class="item">
+        <div class="row">
+          <p class="col"><b>一些信息</b></p>
+        </div>
+        <div class="row">
+          <p class="col"></p>
+          <p class="col"></p>
+        </div>
+        <div class="row">
+          <p class="col"></p>
+        </div>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" type="submit" ng-if="rept.iid">卡片回收</button>
+    </div>
+    </form>
+  </ion-content>
+</ion-view>

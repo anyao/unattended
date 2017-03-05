@@ -1,0 +1,31 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+
+<ion-view title="账户信息">
+  <ion-content has-header="true" padding="true">
+    <div class="list">
+        <div class="row">
+            <div class="col" style="width:150px;"><b>用户ID：</b>{{userinfo.userid}}</div>
+        </div>
+        <div class="row">
+            <div class="col" style="width:150px;"><b>姓名：</b>{{userinfo.username}}</div>
+        </div>
+        <div class="row">
+            <div class="col" style="width:150px;"><b>部门：</b>{{userinfo.dpt}}</div>
+        </div>
+        <div class="row">
+            <div class="col" style="width:150px;"><b>仓库：</b></div>
+        </div>
+        <div ng-repeat="item in whses" style="border:0px">
+          <div class="col" ng-repeat="son in item.son">
+            {{son.whsename}}
+          </div>
+        </div>
+
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,78 @@
+<style type="text/css">
+.row {
+    border-top: 1px solid #ccc;
+}
+.row .col {
+    padding-left: 2px;
+    padding-right: 2px;
+    border-left: 1px solid #ccc;
+}
+.row .first {
+    border-left: 0px solid #ccc;
+    padding-right: 0px;
+}
+</style>
+<ion-view title="{{whsename}}">
+   <ion-nav-buttons side="left">
+      <a class="button button-icon icon ion-home" ng-click="towhsechoose()"></a>
+  </ion-nav-buttons>
+
+  <ion-content has-header="true" style="padding-top:0px;" scroll="true">
+    <label class="item item-input-inset" style="border:none;padding:0px" ng-if="rept.errmsg">
+      <span class="input-label" style="color:red;font-size:16px;padding:10px">{{rept.errmsg}}</span>
+    </label>
+    <label class="item item-input-inset" style="border:none;padding:0px" ng-if="rept.succmsg">
+      <span class="input-label" style="color:green;font-size:16px;padding:10px">{{rept.succmsg}}</span>
+    </label>
+    <form ng-submit="presubmit()">
+    <div class="list">
+      <label class="item item-input-inset">
+        <span class="input-label" >卡号：{{rept.cardno}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >磅单号：{{rept.reptno}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >车牌号：{{rept.hphm}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >存货：{{rept.invname}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >供应商：{{rept.vendername}}</span>
+      </label>
+      <label class="item item-input-inset">
+        <span class="input-label" >毛重：{{rept.gross}}</span>
+      </label>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" type="submit" ng-if="rept.iid">收货确认</button>
+    </div>
+    </form>
+  </ion-content>
+
+<!--   <ion-content style="padding-top:0px;" scroll="false">
+    <div class="bar bar-header item-input-inset" style="padding:0px;">
+        <div class="row" style="border:0px;font-weight:bold;background-color:#ccc;">
+          <div class="col first">磅单号</div>
+          <div class="col">存货</div>
+          <div class="col">车牌号</div>
+          <div class="col">卡号</div>
+
+        </div>
+    </div>
+    <ion-content style="padding-top:43px;">
+        <ion-refresher pulling-text=" 下拉刷新" refreshing-text=" 正在刷新 ..." on-refresh="refresh()">
+        </ion-refresher>
+        <ion-list>
+        <div class="row" ng-repeat="item in cditems" ng-click="yesSpot(item.iid, item.hphm, item.invname, $index);" ng-if='item.iid'>
+          <div class="col first">{{item.reptno}}</div>
+          <div class="col">{{item.invname}}</div>
+          <div class="col">{{item.hphm}}</div>
+          <div class="col">{{item.cardno}}</div>
+        </div>
+        </ion-list>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="ifMore"  distance="10%"></ion-infinite-scroll>
+    </ion-content>
+  </ion-content> -->
+</ion-view>

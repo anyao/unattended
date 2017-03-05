@@ -1,0 +1,13 @@
+<ion-view title="仓库选择">
+  <ion-content scroll="false">
+    <ion-content>
+        <ion-list>
+          <ul class="list">
+            <li class="item" ng-repeat="item in nodeitems" ng-click="whseselected(item.whseid, item.whsename)">
+            {{item.whsename}}
+            </li>
+          </ul>
+        </ion-list>
+    </ion-content>
+  </ion-content>
+</ion-view>

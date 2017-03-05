@@ -1,0 +1,41 @@
+<style type="text/css">
+.row .col {
+    padding: 0px;
+    margin: 0px;
+}
+
+.card{
+  margin:10px;
+}
+</style>
+<ion-view title="质检历史">
+    <ion-content>
+      <ion-refresher pulling-text=" 下拉刷新" refreshing-text=" 正在刷新 ..." on-refresh="refresh()">
+      </ion-refresher>
+      <ion-list>
+        <div class="list card" ng-repeat="item in zjhisitems">
+          <div class="item">
+            <div class="row">
+              <p class="col"><b>单号：{{item.reptno}}</b></p>
+            </div>
+            <div class="row">
+              <p class="col">时间：{{item.zjat}}</p>
+            </div>
+            <div class="row">
+              <p class="col">车号：{{item.hphm}}</p>
+              <p class="col">存货：{{item.invname}}</p>
+            </div>
+            <div class="row">
+              <p class="col">供应商：{{item.vendername}}</p>
+            </div>
+            <div class="row">
+              <p class="col">扣水：{{item.water}}</p>
+              <p class="col">扣粉：{{item.powder}}</p>
+              <p class="col">扣杂：{{item.other}}</p>
+            </div>
+          </div>
+        </div>
+      </ion-list>
+      <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false" distance="10%" ng-if="ifMore"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>
